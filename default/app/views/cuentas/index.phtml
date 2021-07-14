@@ -1,0 +1,21 @@
+<div class="content">
+    <?php echo View::content(); ?>
+    <h3>Cuentas</h3>
+    
+    <TABLE BORDER>
+	<TR>
+		<TH>Id</TH>  <TH>Id Sucursal</TH> <TH>Saldo</TH> <TH>Movimientos Maximos</TH> <TH>Editar Cuenta</TH>
+	</TR>
+    <?php foreach ($listCuentas->items as $item) : ?>
+    
+	<TR>
+		<TD><?php echo $item->id ?></TD> <TD><?php echo $item->id_sucursal ?></TD> <TD> <?php echo $item->saldo ?></TD> <TD><?php echo $item->movimientos_maximos ?></TD><td><?= Html::linkAction("edit/$item->id/", 'Editar') ?></td>
+	</TR>
+	</TR>
+    <?php endforeach; ?>
+    <label><?= Html::linkAction("create/", 'Nueva Cuenta') ?></label> 
+
+</TABLE>	
+    <?php if($listCuentas->prev) echo Html::link("cuentas/index/$listCuentas->prev/", '<< Anterior |'); ?>
+    <?php if($listCuentas->next) echo Html::link("cuentas/index/$listCuentas->next/", '| Próximo >>'); ?>
+</div>

@@ -1,0 +1,17 @@
+
+<?php View::content() ?>
+<h3>Alta Sucursales<h3>
+
+<?= Form::open(); // por defecto llama a la misma url ?> 
+
+        <label>Direccion <?= Form::text('sucursales.direccion') ?></label>
+        <label>ID Oficial <?= Form::text('sucursales._id_oficial') ?></label>
+        <label>Nombre <?= Form::text('sucursales.nombre') ?></label>
+        <label>Telefono <?= Form::text('sucursales.telefono') ?></label>
+        <label>Abierto <?= Form::text('sucursales.abierto') ?></label>
+        <label>Escala <?= Form::text('sucursales.escala') ?></label>
+
+      <?= Form::submit('Agregar') ?> 
+      <button><?= Html::linkAction("index/", 'Cancelar') ?></button>
+
+<?= Form::close() ?> 

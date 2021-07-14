@@ -1,0 +1,9 @@
+<?php View::content() ?> 
+<h3>Editar Estado<h3>
+<?= Form::open(); // por defecto llama a la misma url ?>
+
+  <label>Nombre <?= Form::text('estados.nombre') ?></label>
+  <?= Form::hidden('estados.id') ?> 
+  <?= Form::submit('Actualizar') ?> 
+  <button><?= Html::linkAction("index/", 'Cancelar') ?></button>
+<?= Form::close() ?>

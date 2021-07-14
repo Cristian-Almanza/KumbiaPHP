@@ -1,0 +1,38 @@
+<div class="content">
+    <?php echo View::content(); ?>
+    <h3>Usuarios</h3>
+    
+    <TABLE BORDER>
+	<TR>
+		<TH>Id</TH>
+        <TH>Id Bancario</TH> 
+        <TH>Id Cuenta</TH> 
+        <TH>IP</TH>
+        <TH>Nombre</TH>
+        <th>Contraseña</th>
+        <th>Tipo</th>
+        <TH>Estado</TH>
+        <th>Numero de cuenta</th>
+        <TH>Logins Fallidos</TH>
+	</TR>
+    <?php foreach ($listUsuarios->items as $item) : ?>
+    
+	<TR>
+		<TD><?php echo $item->id ?></TD> 
+        <TD><?php echo $item->_id_bancario ?></TD> 
+        <TD><?php echo $item->_id_cuenta ?></TD> 
+        <TD><?php echo $item->_ip?></TD>
+        <TD><?php echo $item->nombre?></TD>
+        <TD><?php echo $item->pass?></TD>
+        <TD><?php echo $item->tipo?></TD>
+        <TD><?php echo $item->estado?></TD>
+        <TD><?php echo $item->_numero_cuentas?></TD>
+        <TD><?php echo $item->login_fallidos?></TD>
+	</TR>
+    <?php endforeach; ?>
+    <label><?= Html::linkAction("create/", 'Nuevo Usuario') ?></label> 
+
+</TABLE>	
+    <?php if($listUsuarios->prev) echo Html::link("usuarios/index/$listUsuarios->prev/", '<< Anterior |'); ?>
+    <?php if($listUsuarios->next) echo Html::link("usuarios/index/$listUsuarios->next/", '| Próximo >>'); ?>
+</div>

@@ -1,0 +1,26 @@
+<div class="content">
+    <?php echo View::content(); ?>
+    <h3>Estados</h3>
+    
+    <TABLE BORDER>
+	<TR>
+		<TH>Id</TH> 
+        <TH>Nombre</TH> 
+        <TH>Editar</TH>
+	</TR>
+
+    <?php foreach ($listEstados->items as $item) : ?>
+    
+	<TR>
+		<TD><?php echo $item->id ?></TD> 
+        <TD><?php echo $item->nombre ?></TD> 
+        <td><?= Html::linkAction("edit/$item->id/", 'Editar') ?></td>
+        
+	</TR>
+    <?php endforeach; ?>
+    <label><?= Html::linkAction("create/", 'Nuevo Estado') ?></label> 
+</TABLE>	
+   
+    <?php if($listEstados->prev) echo Html::link("estados/index/$listEstados->prev/", '<< Anterior |'); ?>
+    <?php if($listEstados->next) echo Html::link("estados/index/$listEstados->next/", '| Próximo >>'); ?>
+</div>

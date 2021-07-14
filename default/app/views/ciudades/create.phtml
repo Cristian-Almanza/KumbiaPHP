@@ -1,0 +1,13 @@
+
+<?php View::content() ?>
+<h3>Alta Ciudades<h3>
+
+<?= Form::open(); // por defecto llama a la misma url ?> 
+
+        <label>Nombre <?= Form::text('ciudades.nombre') ?></label>
+        <label>Id estado <?= Form::text('ciudades.id_estado') ?></label>
+        <label>Tipo <?= Form::text('ciudades.tipo') ?></label>
+      <?= Form::submit('Agregar') ?> 
+      <button><?= Html::linkAction("index/", 'Cancelar') ?></button>
+
+<?= Form::close() ?> 

@@ -1,0 +1,16 @@
+<?php View::content() ?>
+<h3>Alta Empleado<h3>
+
+<?= Form::open(); // por defecto llama a la misma url ?> 
+
+        <label>Nombre <?= Form::text('empleados.nombre') ?></label>
+        <label>Apellidos <?= Form::text('empleados.apellidos') ?></label>
+        <label>Direccion <?= Form::text('empleados.direccion') ?></label>
+        <label>Sucursal<?= Form::text('empleados._id_sucursal_asociada') ?></label>
+        <label>Nivel <?= Form::text('empleados.nivel') ?></label>
+        <label>Telefono <?= Form::text('empleados.telefono') ?></label>
+
+      <?= Form::submit('Agregar') ?> 
+      <button><?= Html::linkAction("index/", 'Cancelar') ?></button>
+
+<?= Form::close() ?> 

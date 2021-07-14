@@ -1,0 +1,13 @@
+
+<?php View::content() ?>
+<h3>Nueva Cuenta<h3>
+
+<?= Form::open(); // por defecto llama a la misma url ?> 
+
+        <label>Id Sucursal <?= Form::text('cuentas.id_sucursal') ?></label>
+        <label>Saldo <?= Form::text('cuentas.saldo') ?></label>
+        <label>Movimientos Maximos <?= Form::text('cuentas.movimientos_maximos') ?></label>
+      <?= Form::submit('Agregar') ?> 
+      <button><?= Html::linkAction("index/", 'Cancelar') ?></button>
+
+<?= Form::close() ?> 

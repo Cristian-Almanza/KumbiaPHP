@@ -1,0 +1,10 @@
+<?php View::content() ?> 
+<h3>Editar Ciudad<h3>
+<?= Form::open(); // por defecto llama a la misma url ?>
+<label>Nombre <?= Form::text('ciudades.nombre') ?></label>
+        <label>Id estado <?= Form::text('ciudades.id_estado') ?></label>
+        <label>Tipo <?= Form::text('ciudades.tipo') ?></label>
+  <?= Form::hidden('ciudades.id') ?> 
+  <?= Form::submit('Actualizar') ?> 
+  <button><?= Html::linkAction("index/", 'Cancelar') ?></button>
+<?= Form::close() ?>

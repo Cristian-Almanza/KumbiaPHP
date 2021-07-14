@@ -1,0 +1,22 @@
+<div class="content">
+    <?php echo View::content(); ?>
+    <h3>Ciudades</h3>
+    
+    <TABLE BORDER>
+	<TR>
+		<TH>Id</TH> <TH>Ciudad</TH> <TH>Tipo</TH><TH>EDITAR</TH>
+	</TR>
+    <?php foreach ($listCiudades->items as $item) : ?>
+    
+	<TR>
+		<TD><?php echo $item->id ?></TD> <TD> <?php echo $item->nombre ?></TD> <TD><?php echo $item->tipo ?></TD> <td><?= Html::linkAction("edit/$item->id/", 'Editar') ?></td>
+	</TR>
+    
+    <?php endforeach; ?>
+    <label><?= Html::linkAction("create/", 'Nueva Ciudad') ?></label> 
+
+
+</TABLE>	
+    <?php if($listCiudades->prev) echo Html::link("ciudades/index/$listCiudades->prev/", '<< Anterior |'); ?>
+    <?php if($listCiudades->next) echo Html::link("ciudades/index/$listCiudades->next/", '| Próximo >>'); ?>
+</div>

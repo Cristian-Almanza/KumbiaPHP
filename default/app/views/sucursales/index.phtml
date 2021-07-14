@@ -1,0 +1,26 @@
+<div class="content">
+    <?php echo View::content(); ?>
+    <h3>Sucursales</h3>
+    
+    <TABLE BORDER>
+	<TR>
+		<TH>Id</TH>  <TH>Direccion</TH> <TH>Id Oficial</TH> <TH>Nombre</TH> <TH>Telefono</TH> <th>Abierto</th> <TH>Escala</TH> <TH>Editar Sucursal</TH>
+	</TR>
+    <?php foreach ($listSucursales->items as $item) : ?>
+    
+	<TR>
+		<TD><?php echo $item->id ?></TD> 
+        <TD><?php echo $item->direccion ?></TD> 
+        <TD><?php echo $item->id_oficial ?></TD> 
+        <TD><?php echo $item->nombre?></TD> 
+        <TD><?php echo $item->telefono?></TD>
+        <TD><?php echo $item->abierto?></TD>
+        <TD><?php echo $item->escala?></TD>
+        <td><?= Html::linkAction("edit/$item->id/", 'Editar') ?></td>
+	</TR>
+    <?php endforeach; ?>
+    <label><?= Html::linkAction("create/", 'Nueva Sucursal') ?></label> 
+</TABLE>	
+    <?php if($listSucursales->prev) echo Html::link("sucursales/index/$listSucursales->prev/", '<< Anterior |'); ?>
+    <?php if($listSucursales->next) echo Html::link("sucursales/index/$listSucursales->next/", '| Próximo >>'); ?>
+</div>

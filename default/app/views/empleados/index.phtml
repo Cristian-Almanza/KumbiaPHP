@@ -1,0 +1,38 @@
+<div class="content">
+    <?php echo View::content(); ?>
+    <h3>Empleados</h3>
+    
+    <TABLE BORDER>
+	<TR>
+		<TH>Id</TH> 
+        <TH>Nombre</TH> 
+        <TH>Apellidos</TH>
+        <TH>Direccion</TH>
+        <TH>Sucursal</TH>
+        <TH>Nivel</TH>
+        <TH>Telefono</TH>
+        <TH>Editar</TH>
+	</TR>
+
+    <?php foreach ($listEmpleados->items as $item) : ?>
+    
+	<TR>
+		<TD><?php echo $item->id ?></TD> 
+        <TD><?php echo $item->nombre ?></TD> 
+        <TD><?php echo $item->apellidos ?> 
+        <TD><?php echo $item->direccion ?></TD>
+        <TD><?php echo $item->_id_sucursal_asociada ?></TD>
+        <TD><?php echo $item->nivel ?></TD>
+        <TD><?php echo $item->telefono ?></TD>
+        <td>
+        <?= Html::linkAction("edit/$item->id/", 'Editar') ?>
+        </td>
+        
+	</TR>
+    <?php endforeach; ?>
+
+</TABLE>	
+    <label><?= Html::linkAction("create/", 'Nuevo Empleado') ?></label> 
+    <?php if($listEmpleados->prev) echo Html::link("empleados/index/$listEmpleados->prev/", '<< Anterior |'); ?>
+    <?php if($listEmpleados->next) echo Html::link("empleados/index/$listEmpleados->next/", '| Próximo >>'); ?>
+</div>
